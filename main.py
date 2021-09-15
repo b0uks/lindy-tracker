@@ -8,6 +8,8 @@ def add_listing():
     try:
         lindy = LindyListing(url)
         lindy.print_stuff()
+        lindy.nickname = input('please set a nickname or hit enter to leave blank: ')  # Python 3
+
         dbi.add_to_db(lindy)
     except ValueError:
         print('ERROR: invalid url --PROGRAM STOPPED')
@@ -18,6 +20,7 @@ def refresh_all():
     for lindy in list_ings:
         lindy.update()
         dbi.update_entry(lindy)
+
 
 if __name__ == "__main__":
     while True:

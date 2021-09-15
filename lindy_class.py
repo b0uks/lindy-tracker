@@ -25,6 +25,7 @@ class LindyListing:
 
     id = -1
     name = 'none'
+    nickname = ''
     url = 'none'
     status = 'none'
     last_update = 'never'
@@ -49,6 +50,7 @@ class LindyListing:
 
     def print_stuff(self):
         # print(self.text)
+        print(f'nickname: {self.nickname}')
         print(f'Listing name: {self.name}')
         print(self.url)
         print(f'Status: {self.status}')
@@ -67,4 +69,4 @@ class LindyListing:
             print(f'{self.name} has changed from {old} to {self.status}')
 
     def to_list(self):
-        return (self.name, self.status, self.fulfill, self.url)
+        return self.name, self.status, self.fulfill, self.url
